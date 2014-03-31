@@ -19505,7 +19505,7 @@ if test "x$STATIC_PRPLS" != "x" -a "x$DYNAMIC_PRPLS" = "xall"; then
 fi
 
 if test "x$STATIC_PRPLS" = "xall" ; then
-	STATIC_PRPLS="bonjour gg irc jabber msn myspace mxit novell oscar sametime silc simple yahoo zephyr"
+	STATIC_PRPLS="bonjour gg irc jabber msn myspace mxit novell oscar sametime silc simple yahoo zephyr yggdrasil"
 fi
 if test "x$have_meanwhile" != "xyes" ; then
 	STATIC_PRPLS=`echo $STATIC_PRPLS | $sedpath 's/sametime//'`
@@ -19694,7 +19694,7 @@ if test "${with_dynamic_prpls+set}" = set; then :
 fi
 
 if test "x$DYNAMIC_PRPLS" = "xall" ; then
-	DYNAMIC_PRPLS="bonjour gg irc jabber msn myspace mxit novell oscar sametime silc simple yahoo zephyr"
+	DYNAMIC_PRPLS="bonjour gg irc jabber msn myspace mxit novell oscar sametime silc simple yahoo zephyr yggdrasil"
 fi
 if test "x$have_meanwhile" != "xyes"; then
 	DYNAMIC_PRPLS=`echo $DYNAMIC_PRPLS | $sedpath 's/sametime//'`
@@ -19729,6 +19729,7 @@ for i in $DYNAMIC_PRPLS ; do
 		simple)		dynamic_simple=yes ;;
 		yahoo)		dynamic_yahoo=yes ;;
 		zephyr)		dynamic_zephyr=yes ;;
+		yggdrasil)		dynamic_yggdrasil=yes ;;
 		*)			echo "Invalid dynamic protocol $i!!" ; exit 1 ;;
 	esac
 done
@@ -23286,7 +23287,7 @@ else
 fi
 
 
-ac_config_files="$ac_config_files Makefile Doxyfile doc/Makefile doc/pidgin.1 doc/finch.1 m4macros/Makefile pidgin.apspec pidgin/Makefile pidgin/pidgin.pc pidgin/pidgin-uninstalled.pc pidgin/pidgin-2.pc pidgin/pidgin-2-uninstalled.pc pidgin/pixmaps/Makefile pidgin/pixmaps/emotes/default/24/Makefile pidgin/pixmaps/emotes/none/Makefile pidgin/pixmaps/emotes/small/16/Makefile pidgin/plugins/Makefile pidgin/plugins/cap/Makefile pidgin/plugins/disco/Makefile pidgin/plugins/gestures/Makefile pidgin/plugins/gevolution/Makefile pidgin/plugins/musicmessaging/Makefile pidgin/plugins/perl/Makefile pidgin/plugins/perl/common/Makefile.PL pidgin/plugins/ticker/Makefile libpurple/ciphers/Makefile libpurple/example/Makefile libpurple/gconf/Makefile libpurple/purple.pc libpurple/purple-uninstalled.pc libpurple/purple-2.pc libpurple/purple-2-uninstalled.pc libpurple/plugins/Makefile libpurple/plugins/mono/Makefile libpurple/plugins/mono/api/Makefile libpurple/plugins/mono/loader/Makefile libpurple/plugins/perl/Makefile libpurple/plugins/perl/common/Makefile.PL libpurple/plugins/ssl/Makefile libpurple/plugins/tcl/Makefile libpurple/Makefile libpurple/protocols/Makefile libpurple/protocols/bonjour/Makefile libpurple/protocols/gg/Makefile libpurple/protocols/irc/Makefile libpurple/protocols/jabber/Makefile libpurple/protocols/msn/Makefile libpurple/protocols/myspace/Makefile libpurple/protocols/mxit/Makefile libpurple/protocols/novell/Makefile libpurple/protocols/null/Makefile libpurple/protocols/oscar/Makefile libpurple/protocols/sametime/Makefile libpurple/protocols/silc/Makefile libpurple/protocols/silc10/Makefile libpurple/protocols/simple/Makefile libpurple/protocols/yahoo/Makefile libpurple/protocols/zephyr/Makefile libpurple/tests/Makefile libpurple/purple.h libpurple/version.h share/sounds/Makefile share/ca-certs/Makefile finch/finch.pc finch/Makefile finch/libgnt/Makefile finch/libgnt/gnt.pc finch/libgnt/wms/Makefile finch/plugins/Makefile po/Makefile.in pidgin.desktop.in pidgin.spec"
+ac_config_files="$ac_config_files Makefile Doxyfile doc/Makefile doc/pidgin.1 doc/finch.1 m4macros/Makefile pidgin.apspec pidgin/Makefile pidgin/pidgin.pc pidgin/pidgin-uninstalled.pc pidgin/pidgin-2.pc pidgin/pidgin-2-uninstalled.pc pidgin/pixmaps/Makefile pidgin/pixmaps/emotes/default/24/Makefile pidgin/pixmaps/emotes/none/Makefile pidgin/pixmaps/emotes/small/16/Makefile pidgin/plugins/Makefile pidgin/plugins/cap/Makefile pidgin/plugins/disco/Makefile pidgin/plugins/gestures/Makefile pidgin/plugins/gevolution/Makefile pidgin/plugins/musicmessaging/Makefile pidgin/plugins/perl/Makefile pidgin/plugins/perl/common/Makefile.PL pidgin/plugins/ticker/Makefile libpurple/ciphers/Makefile libpurple/example/Makefile libpurple/gconf/Makefile libpurple/purple.pc libpurple/purple-uninstalled.pc libpurple/purple-2.pc libpurple/purple-2-uninstalled.pc libpurple/plugins/Makefile libpurple/plugins/mono/Makefile libpurple/plugins/mono/api/Makefile libpurple/plugins/mono/loader/Makefile libpurple/plugins/perl/Makefile libpurple/plugins/perl/common/Makefile.PL libpurple/plugins/ssl/Makefile libpurple/plugins/tcl/Makefile libpurple/Makefile libpurple/protocols/Makefile libpurple/protocols/bonjour/Makefile libpurple/protocols/gg/Makefile libpurple/protocols/irc/Makefile libpurple/protocols/jabber/Makefile libpurple/protocols/msn/Makefile libpurple/protocols/myspace/Makefile libpurple/protocols/mxit/Makefile libpurple/protocols/novell/Makefile libpurple/protocols/null/Makefile libpurple/protocols/oscar/Makefile libpurple/protocols/sametime/Makefile libpurple/protocols/silc/Makefile libpurple/protocols/yggdrasil/Makefile libpurple/protocols/silc10/Makefile libpurple/protocols/simple/Makefile libpurple/protocols/yahoo/Makefile libpurple/protocols/zephyr/Makefile libpurple/tests/Makefile libpurple/purple.h libpurple/version.h share/sounds/Makefile share/ca-certs/Makefile finch/finch.pc finch/Makefile finch/libgnt/Makefile finch/libgnt/gnt.pc finch/libgnt/wms/Makefile finch/plugins/Makefile po/Makefile.in pidgin.desktop.in pidgin.spec"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -24544,6 +24545,7 @@ do
     "libpurple/protocols/jabber/Makefile") CONFIG_FILES="$CONFIG_FILES libpurple/protocols/jabber/Makefile" ;;
     "libpurple/protocols/msn/Makefile") CONFIG_FILES="$CONFIG_FILES libpurple/protocols/msn/Makefile" ;;
     "libpurple/protocols/myspace/Makefile") CONFIG_FILES="$CONFIG_FILES libpurple/protocols/myspace/Makefile" ;;
+    "libpurple/protocols/yggdrasil/Makefile") CONFIG_FILES="$CONFIG_FILES libpurple/protocols/yggdrasil/Makefile" ;;
     "libpurple/protocols/mxit/Makefile") CONFIG_FILES="$CONFIG_FILES libpurple/protocols/mxit/Makefile" ;;
     "libpurple/protocols/novell/Makefile") CONFIG_FILES="$CONFIG_FILES libpurple/protocols/novell/Makefile" ;;
     "libpurple/protocols/null/Makefile") CONFIG_FILES="$CONFIG_FILES libpurple/protocols/null/Makefile" ;;
@@ -26016,4 +26018,3 @@ fi
 echo
 echo configure complete, now type \'make\'
 echo
-
